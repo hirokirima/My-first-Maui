@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MauiApp3.MainPage">
+
+    <ScrollView>
+        <StackLayout>
+            <!--アプリ名入力-->
+                <HorizontalStackLayout>
+                <Label Text="敵アプリ名" VerticalOptions="Center"/>
+                <Border>
+                    <Entry  WidthRequest="250"/>
+                </Border>
+                <Button Text="決定"/>
+            </HorizontalStackLayout>
+            <HorizontalStackLayout>
+                <Label Text="自アプリ名" VerticalOptions="Center"/>
+                <Border>
+                    <Entry  WidthRequest="250"/>
+                </Border>
+                <Button Text="決定"/>
+            </HorizontalStackLayout>
+            <!--フレーム-->
+            <Frame BackgroundColor="Yellow">
+                <Label Text="アプリケーション" FontSize="Large" FontAttributes="Bold" />
+            </Frame>
+            <!--敵ポケモンフィールド-->
+            <HorizontalStackLayout HorizontalOptions="End">
+                <Frame>
+                    <VerticalStackLayout>
+                        <Label Text="敵アプリ" FontSize="Body"/>
+                        <Slider Minimum="0" Maximum="100" WidthRequest="200" Value="100"/>
+                        <Label Text="100(仮)" HorizontalOptions="End"/>
+                    </VerticalStackLayout>
+                </Frame>
+                <Image Source="memo.png" HeightRequest="100" WidthRequest="100" Aspect="Fill"/>
+            </HorizontalStackLayout>
+            <!--バトルフィールド　リザルト画面-->
+            <Frame HeightRequest="300">
+                <Label Text="WIN" FontSize="50" HorizontalOptions="Center" VerticalOptions="Center"/>
+            </Frame>
+            <!--自ポケモンフィールド-->
+            <HorizontalStackLayout HorizontalOptions="Start">
+                <Image Source="Calendar.png" HeightRequest="100" WidthRequest="100" Aspect="Fill"/>
+                <Frame>
+                    <VerticalStackLayout>
+                        <Label Text="自アプリ" FontSize="Body"/>
+                        <Slider Minimum="0" Maximum="100" WidthRequest="200" Value="100"/>
+                        <Label Text="100(仮)" HorizontalOptions="Start"/>
+                    </VerticalStackLayout>
+                </Frame>
+            </HorizontalStackLayout>
+            <!--メッセージボックス-->
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="250"/>
+                    <ColumnDefinition Width="Auto"/>
+                </Grid.ColumnDefinitions>
+                <Frame Grid.Column="0">
+                    <Label Text="message"/>
+                </Frame>
+                <VerticalStackLayout Grid.Column="1">
+                    <HorizontalStackLayout >
+                        <Button Text="たたかう" FontSize="Body"/>
+                        <Button Text="バック" FontSize="Body"/>
+                    </HorizontalStackLayout>
+                    <HorizontalStackLayout >
+                        <Button Text="ポケモン" FontSize="Body"/>
+                        <Button Text="逃げる" FontSize="Body"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Grid>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>
